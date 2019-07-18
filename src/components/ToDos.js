@@ -3,13 +3,14 @@ import ToDoItem from './ToDoItem';
 import PropTypes from 'prop-types';
 
 class ToDos extends Component {
+
   render(){
     console.log(this.props.todos);
     {/*}//looping through the todos with a map function
     //referring to props that have been instantiated in the App component
     //We are having ToDoItem component displayed here, so whatever we put in ToDoItem component is what will be displayed hereÍ*/}
     return this.props.todos.map((todo) => (
-      <ToDoItem key={todo.id} todo={todo} />
+      <ToDoItem key={todo.id} todo={todo} markComplete={this.props.markComplete} delToDo={this.props.delToDo}/>
     ));
   }
 }
